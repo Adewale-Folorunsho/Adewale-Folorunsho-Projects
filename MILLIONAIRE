@@ -1,0 +1,205 @@
+# ExtraCreditIncluded
+#the following are libraries and variables that I have to declare.
+import random 
+money=0 
+
+#if the user chooses pick a friend, the phone_a_friend function is called
+def phone_a_friend(ans) :
+    array = [ "a" , "b" , "c" ,"d" ]
+    a = random.randint(1,100)
+    if a <= 85 :
+        return ans
+    elif a > 85 :
+        array.remove(ans)
+        return random.choice(array)
+    # random.choice picks a random element from the array
+
+name = input(
+"""Welcome to Millionaire! What is your name?
+""")
+print("Currently you have made $"+str(money)+".")
+print("If you want to phone a friend, type 'e'")
+
+#the questions start here 
+q1 = input("""Nigeria is a country on which continent?
+a. Africa
+b. Asia
+c. Kenya
+d. Europe
+>> """)
+
+# this condition is for if the contestant picks the option to phone a friend 
+if q1 == "e" :
+    guess = phone_a_friend("a")
+    print("I think the answer is",guess,"but I am not sure")
+    q1 = input("""Enter an answer
+>> """)
+
+#this condition is for if the contestant gets the answer wrong.
+if q1 != "a" :
+    print("I'm sorry, that is incorrect.")
+    
+# this conditionis for if the user gets the answer right
+if q1 == "a":
+    money = 500 
+    print("""Correct!
+Currently you have made $"""+str(money))
+    q2 = input("""Who is the CEO of Amazon?
+a. Solomon Grundy
+b. Jeff Bezos
+c. Ezekiel Sam-Davis
+d. Trevor Noah
+>> """)  
+
+# this condition is for if the contestant picks the option to phone a friend 
+    if q2 == "e" :
+        guess = phone_a_friend("b")
+        print("I think the answer is",guess,"but I am not sure")
+        q2 = input("""Enter an answer
+>> """)
+
+#this condition is for if the contestant gets the answer wrong
+    if q2 != "b" :
+        print("I'm sorry, that is incorrect.")
+
+# this condition is for if the user gets the answer right
+    if q2 == "b":
+        money = 1000
+        print("""Correct!
+Currently you have made $"""+str(money))
+        q3 = input("""What is the product of 5 and 4?
+a. 13
+b. 65
+c. 32
+d. 20
+>> """)
+
+# this condition is for if the contestant picks the option to phone a friend
+        if q3 == "e" :
+            guess = phone_a_friend("d")
+            print("I think the answer is",guess,"but I am not sure")
+            q3 = input("""Enter an answer
+>> """)
+
+# this condition is for if the contestant gets the answer wrong
+        if q3 != "d" :
+            print("I'm sorry, that is incorrect.")
+            
+# this condition is for if the user gets the answer right
+        if q3 == "d":
+            money = 5000
+            print("""Correct!
+Currently you have made $"""+str(money))
+            q4 = input("""What is the product of 9 and 5?
+a. 54
+b. 786
+c. 45
+d. 21
+>> """)
+
+# this condition is for if the contestant picks the option to phone a friend
+            if q4 == "e" :
+                guess = phone_a_friend("c")
+                print("I think the answer is",guess,"but I am not sure")
+                q4 = input("""Enter an answer
+>> """)
+
+# this condition is for if the contestant gets the answer wrong
+            if q4 != "c" :
+                print("I'm sorry, that is incorrect.")
+                
+# this condition is for if the user gets the answer right
+            if q4 == "c":
+                money = 20000
+                print("""Correct!
+Currently you have made $"""+str(money))
+                q5 = input("""What is the sum of 19 and 5?
+a. 45
+b. 78556
+c. 4532
+d. 24
+>> """)
+# this condition is for if the contestant picks the option to phone a friend
+                if q5 == "e" :
+                    guess = phone_a_friend("d")
+                    print("I think the answer is",guess,"but I am not sure")
+                    q5 = input("""Enter an answer
+>> """)
+
+# this condition is for if the contestant gets the answer wrong
+                if q5 != "d" :
+                    print("I'm sorry, that is incorrect.")
+                
+# this condition is for if the user gets the answer right
+                if q5 == "d":
+                    money = 50000
+                    print("""Correct!
+Currently you have made $"""+str(money))
+                    q6 = input("""What is 9 divided by 3?
+a. 3
+b. 6
+c. 2
+d. 24
+>> """)                
+# this condition is for if the contestant picks the option to phone a friend
+                    if q6 == "e" :
+                        guess = phone_a_friend("a")
+                        print("I think the answer is",guess,"but I am not sure")
+                        q6 = input("""Enter an answer
+>> """)
+
+# this condition is for if the contestant gets the answer wrong
+                    if q6 != "a" :
+                       print("I'm sorry, that is incorrect.")
+                    
+# this condition is for if the user gets the answer right
+                    if q6 == "a":
+                        money = 250000
+                        print("""Correct!
+Currently you have made $"""+str(money))
+                        q7 = input("""Who is the US president?
+a. Josh Kroenke
+b. Donald Trump
+c. Jeff Bez
+d. Stanislas
+>> """)       
+
+# this condition is for if the contestant picks the option to phone a friend
+                        if q7 == "e" :
+                            guess = phone_a_friend("b")
+                            print("I think the answer is",guess,"but I am not sure")
+                            q7 = input("""Enter an answer
+>> """)
+
+# this condition is for if the contestant gets the answer wrong
+                        if q7 != "b" :
+                            print("I'm sorry, that is incorrect.")
+                            
+# this condition is for if the user gets the answer right
+                        if q7 == "b":
+                            money = 500000
+                            print("""Correct!
+Currently you have made $"""+str(money))
+                            q8 = input("""Who created the telephone?
+a. Graham Bell
+b. Drake Bell
+c. Danny Phantom
+d. Raheem Sterling
+>> """)       
+
+# this condition is for if the contestant picks the option to phone a friend
+                            if q8 == "e" :
+                                guess = phone_a_friend("a")
+                                print("I think the answer is",guess,"but I am not sure")
+                                q8 = input("""Enter an answer
+>> """)
+
+# this condition is for if the contestant gets the answer wrong
+                            if q8 != "a" :
+                                print("I'm sorry, that is incorrect.")  
+                                
+# this condition is for if the user gets the answer right
+                            if q8 == "a":
+                                money = 1000000
+                                print("""Correct!
+You are a millionaire""")
