@@ -1,0 +1,54 @@
+# the string library is imported to get all letters and then separate them into lower case and upper case letters
+import string
+
+letters_lower = string.ascii_letters[0:26]
+letters_upper = string.ascii_letters[26:]
+
+# An encoder/decoder for our spies to secretly send messages.
+encryption_option = input() 
+
+# should_encode will be true if the user wants to encode and should_decode should be true if the user wants to decode
+should_encode = "encode" in encryption_option.lower()
+should_decode = "decode" in encryption_option.lower()
+
+# Ask the user for their message and cipher number.
+cipher_number = int(input())
+spy_message = input()
+encoded = ""
+decoded=""
+
+if should_encode :
+    for i in spy_message :
+        if i in letters_lower :
+            count = letters_lower.index(i) + cipher_number
+            if count > 25 :
+                count = (count % 25) - 1
+            encoded += letters_lower[count]
+        elif i in letters_upper : 
+            count = letters_upper.index(i) + cipher_number
+            if count > 25 :
+                count = (count % 25) - 1
+            encoded += letters_upper[count]
+        if (i not in letters_lower) and (i not in letters_upper) :
+            encoded += i
+    print("Would you like to Encode or Decode? What is your cipher number? What is your message? "+encoded)
+    pass
+elif should_decode:
+    for i in spy_message :
+        if i in letters_lower :
+            count = letters_lower.index(i) - cipher_number
+            if count < 0 :
+                count = 25 + count + 1 
+            decoded += letters_lower[count]
+        elif i in letters_upper : 
+            count = letters_upper.index(i) - cipher_number
+            if count < 0 :
+                count = 25 + count + 1 
+            decoded += letters_upper[count]
+        if (i not in letters_lower) and (i not in letters_upper) :
+            decoded += i
+    print("Would you like to Encode or Decode? What is your cipher number? What is your message? "+decoded)
+    pass
+else:
+    print("We only accept message to decrypt or encrypt")
+    pass
