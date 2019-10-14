@@ -1,0 +1,73 @@
+f=open("players.txt","r")
+QB = {}
+RB = {}
+WR = {}
+TE = {}
+array_store = []
+point = 0
+# Open players.txt to get a list of players and positions using the open function
+for line in f:
+    if line[0] == "Q":
+        array_store = line.split(" ")
+        point = (int(array_store[2]) // 25) + (int(array_store[3]) *4) + (int(array_store[4])//10) + (int(array_store[5]) * 6) + (int(array_store[6]) // 10) +(int(array_store[7]) * 6)
+        QB[array_store[1]] = point
+    elif line[0] == "R" :
+        array_store = line.split(" ")
+        point = (int(array_store[2]) // 25) + (int(array_store[3]) *4) + (int(array_store[4])//10) + (int(array_store[5]) * 6) + (int(array_store[6]) // 10) +(int(array_store[7]) * 6)
+        RB[array_store[1]] = point
+    elif line[0] == "W" :
+        array_store = line.split(" ")
+        point = (int(array_store[2]) // 25) + (int(array_store[3]) *4) + (int(array_store[4])//10) + (int(array_store[5]) * 6) + (int(array_store[6]) // 10) +(int(array_store[7]) * 6)
+        WR[array_store[1]] = point
+    elif line[0] == "T" :
+        array_store = line.split(" ")
+        point = (int(array_store[2]) // 25) + (int(array_store[3]) *4) + (int(array_store[4])//10) + (int(array_store[5]) * 6) + (int(array_store[6]) // 10) +(int(array_store[7]) * 6)
+        TE[array_store[1]] = point
+    array_store = []
+f.close()
+qb = []
+rb = []
+wr = []
+te = []
+max_score = []
+max_score_name = []
+for k in sorted(QB,key = QB.__getitem__,reverse = True):
+    print("QB",str(k),str(QB[k]))
+    break
+i=0
+for k in sorted(RB,key = RB.__getitem__,reverse = True):
+    if i == 2:
+        max_score.append(RB[k])
+        max_score_name.append(k)
+        break
+    if i == 0:
+        print("RB1",str(k),str(RB[k]))
+    elif i == 1:
+        print("RB2",str(k),str(RB[k]))
+    del RB[k]
+    i+=1
+i=0
+for k in sorted(WR,key = WR.__getitem__,reverse = True):
+    if i == 2:
+        max_score.append(WR[k])
+        max_score_name.append(k)
+        break
+    if i == 0:
+        print("WR1",str(k),str(WR[k]))
+    elif i == 1:
+        print("WR2",str(k),str(WR[k]))
+    del WR[k]
+    i+=1
+i=0
+for k in sorted(TE,key = TE.__getitem__,reverse = True):
+    if i == 1:
+        max_score.append(TE[k])
+        max_score_name.append(k)
+        break
+    print("TE",str(k),str(TE[k]))
+    del TE[k]
+    i+=1
+i=0
+flex_score = max(max_score)
+flex_name = max_score_name[max_score.index(flex_score)]
+print("FLEX",flex_name,flex_score)
