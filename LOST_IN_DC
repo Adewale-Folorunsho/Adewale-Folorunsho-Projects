@@ -1,0 +1,44 @@
+# extra credit included
+#latitude_dict is a dictionary that stores the latitudes
+adj=0
+opp=0 
+latitude_dict = { "K St" : 38.902649 , 
+"the White House" : 38.897789 ,
+"Downing Hall" : 38.921669 ,
+"Dupont Circle" : 38.909760 , 
+"Union Station" : 38.897698 }
+
+#longitude_dict is a dictionary that stores the longitude
+longitude_dict = { "K St" : 0 , 
+"the White House" : -77.036562 ,
+"Downing Hall" : -77.021361 ,
+"Dupont Circle" : -77.043479 , 
+"Union Station" : -77.007200 }
+
+#places_array is used to store the places 
+places_array = ["K St" , 
+"the White House" ,
+"Downing Hall" , 
+"Dupont Circle" , 
+"Union Station" ]
+
+#if longitude is less than then its to the west and if its greater than then its to the east
+#if latitude is less then its to the south and if its greater then its to the north
+
+user_latitude = float(input("Insert your latitude: "))
+user_longitude = float(input("Insert your longitude: "))
+for i in places_array :
+    if (user_latitude < latitude_dict[i]) and (latitude_dict[i] != 0) and (user_latitude != 0) :
+        print("You are south of",i)
+    elif (user_latitude > latitude_dict[i]) and (latitude_dict[i] != 0) and (user_latitude != 0) :
+        print("You are north of",i)
+    if (user_longitude < longitude_dict[i]) and (longitude_dict[i] != 0) and (user_longitude != 0) :
+        print("You are west of",i)
+    elif (user_longitude > longitude_dict[i]) and (longitude_dict[i] != 0) and (user_longitude != 0) : 
+        print("You are east of",i)
+
+# this is to measure the distane=ce from downing hall 69.793 
+adj = abs((user_longitude - longitude_dict["Downing Hall"]))*53
+opp = abs((user_latitude - latitude_dict["Downing Hall"]))*69.793
+distance_from_downing = round(((adj**2)+(opp**2))**0.5 , 1) 
+print("You are",distance_from_downing,"miles from Downing Hall.")
